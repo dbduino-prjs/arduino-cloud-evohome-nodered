@@ -1,0 +1,12 @@
+{
+    "name": "arduino-cloud-evohome-nodered",
+    "description": "Connect EveHome devices with the Arduino Cloud using Node-RED",
+    "version": "0.0.1",
+    "dependencies": {},
+    "node-red": {
+        "settings": {
+            "flowFile": "flows.json",
+            "credentialsFile": "flows_cred.json"
+        }
+    }
+}

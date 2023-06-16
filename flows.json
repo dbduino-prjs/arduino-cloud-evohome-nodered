@@ -1,0 +1,642 @@
+[
+    {
+        "id": "ae83a8e53bff7847",
+        "type": "tab",
+        "label": "Evohome (Heating)",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "fb2e848975548237",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "dc42d42587cc29ad",
+        "type": "arduino-connection",
+        "applicationname": "Arduino Node Red"
+    },
+    {
+        "id": "62778331731090d5",
+        "type": "evohome-config",
+        "name": "EvoHome-Casa",
+        "userid": "dbeamonte@gmail.com",
+        "passwd": "Sevilla2oo1"
+    },
+    {
+        "id": "1ff37bba6927ba8c",
+        "type": "inject",
+        "z": "ae83a8e53bff7847",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "60",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "5",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 180,
+        "wires": [
+            [
+                "edc71c0bddbd7ee7"
+            ]
+        ]
+    },
+    {
+        "id": "dabe5ea5b7fdc1bb",
+        "type": "debug",
+        "z": "ae83a8e53bff7847",
+        "name": "DBG: Heating: Status",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 360,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "b2eaeaadd22899d3",
+        "type": "property out",
+        "z": "ae83a8e53bff7847",
+        "connection": "dc42d42587cc29ad",
+        "thing": "4922c372-0b43-40b1-8cf8-af98acc607f0",
+        "property": "a0bceb93-4824-41d7-883d-0d6f86889502",
+        "name": "salon_temp",
+        "propname": "salon_temp",
+        "defaultname": true,
+        "x": 1090,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "6fe3a188d112bd90",
+        "type": "property out",
+        "z": "ae83a8e53bff7847",
+        "connection": "dc42d42587cc29ad",
+        "thing": "4922c372-0b43-40b1-8cf8-af98acc607f0",
+        "property": "381d3a04-86a1-40bf-ac1a-c349babe4640",
+        "name": "salon_target",
+        "propname": "salon_target",
+        "defaultname": true,
+        "x": 1090,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "f5b0a46c244e8d13",
+        "type": "property out",
+        "z": "ae83a8e53bff7847",
+        "connection": "dc42d42587cc29ad",
+        "thing": "4922c372-0b43-40b1-8cf8-af98acc607f0",
+        "property": "d96ad5bb-1fdb-4c1d-a10b-941659579a47",
+        "name": "arriba_temp",
+        "propname": "arriba_temp",
+        "defaultname": true,
+        "x": 1090,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "2b455966c66bc00c",
+        "type": "property out",
+        "z": "ae83a8e53bff7847",
+        "connection": "dc42d42587cc29ad",
+        "thing": "4922c372-0b43-40b1-8cf8-af98acc607f0",
+        "property": "20544c31-b03b-4677-812a-157c47f17d04",
+        "name": "arriba_target",
+        "propname": "arriba_target",
+        "defaultname": true,
+        "x": 1090,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "dcd8c5e374538414",
+        "type": "comment",
+        "z": "ae83a8e53bff7847",
+        "name": "Description",
+        "info": "This flow is used to connect EvoHome to the Arduino Cloud\n\nEvoHome is queried every 60s, data is parsed and sent to \nArduino Cloud.\nPre-requisites\n* An Arduino Cloud account\n* Creation of a Thing (with or without an associated Device)\n* Creation of the variables that you want to sync\n",
+        "x": 110,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "3bff02ac30cd1bfb",
+        "type": "debug",
+        "z": "ae83a8e53bff7847",
+        "name": "DBG: Heating: QuickAction",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 840,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "c162c51fa7340cd2",
+        "type": "property in poll",
+        "z": "ae83a8e53bff7847",
+        "connection": "dc42d42587cc29ad",
+        "thing": "4922c372-0b43-40b1-8cf8-af98acc607f0",
+        "property": "98489064-154a-49a1-8d82-fcdd34ffb5cf",
+        "name": "on_off",
+        "propname": "on_off",
+        "defaultname": true,
+        "timeWindowCount": "15",
+        "timeWindowUnit": "1",
+        "x": 150,
+        "y": 580,
+        "wires": [
+            [
+                "fe2c5fb1f180f978"
+            ]
+        ]
+    },
+    {
+        "id": "95c7b28dce4651ca",
+        "type": "change",
+        "z": "ae83a8e53bff7847",
+        "name": "Parse On/Off",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload.quickAction",
+                "pt": "msg",
+                "from": "true",
+                "fromt": "bool",
+                "to": "Auto",
+                "tot": "str"
+            },
+            {
+                "t": "change",
+                "p": "payload.quickAction",
+                "pt": "msg",
+                "from": "false",
+                "fromt": "bool",
+                "to": "HeatingOff",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 470,
+        "y": 580,
+        "wires": [
+            [
+                "3bff02ac30cd1bfb",
+                "d66308de5c08fb5f"
+            ]
+        ]
+    },
+    {
+        "id": "940fa04735310771",
+        "type": "debug",
+        "z": "ae83a8e53bff7847",
+        "name": "DBG: Heating: External ON/OFF",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 530,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "fe2c5fb1f180f978",
+        "type": "rbe",
+        "z": "ae83a8e53bff7847",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 290,
+        "y": 580,
+        "wires": [
+            [
+                "95c7b28dce4651ca",
+                "940fa04735310771"
+            ]
+        ]
+    },
+    {
+        "id": "efe03748d5043bc2",
+        "type": "switch",
+        "z": "ae83a8e53bff7847",
+        "name": "",
+        "property": "payload.name",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "salon",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "arriba",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 530,
+        "y": 180,
+        "wires": [
+            [
+                "851e2e91d78cd252",
+                "156bef46fd509424"
+            ],
+            [
+                "b345db8c6b904f9f",
+                "e3fe13a8cf16087c",
+                "0e8004eb0c6105a9"
+            ]
+        ]
+    },
+    {
+        "id": "851e2e91d78cd252",
+        "type": "change",
+        "z": "ae83a8e53bff7847",
+        "name": "Parse Salon:Temp",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload.currentTemperature",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Salon:Temp",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 810,
+        "y": 80,
+        "wires": [
+            [
+                "b2eaeaadd22899d3"
+            ]
+        ]
+    },
+    {
+        "id": "156bef46fd509424",
+        "type": "change",
+        "z": "ae83a8e53bff7847",
+        "name": "Parse Salon:Target",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload.targetTemperature",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Salon:Target",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 810,
+        "y": 120,
+        "wires": [
+            [
+                "6fe3a188d112bd90"
+            ]
+        ]
+    },
+    {
+        "id": "b345db8c6b904f9f",
+        "type": "change",
+        "z": "ae83a8e53bff7847",
+        "name": "Parse Arriba:Temp",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload.currentTemperature",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Arriba:Temp",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 810,
+        "y": 240,
+        "wires": [
+            [
+                "f5b0a46c244e8d13"
+            ]
+        ]
+    },
+    {
+        "id": "e3fe13a8cf16087c",
+        "type": "change",
+        "z": "ae83a8e53bff7847",
+        "name": "Parse Arriba:Target",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload.targetTemperature",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Arriba:Target",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 810,
+        "y": 280,
+        "wires": [
+            [
+                "2b455966c66bc00c"
+            ]
+        ]
+    },
+    {
+        "id": "0e8004eb0c6105a9",
+        "type": "change",
+        "z": "ae83a8e53bff7847",
+        "name": "Parse Mode",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload.systemModeStatus.mode",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 830,
+        "y": 380,
+        "wires": [
+            [
+                "5ec7178150ae1b0f"
+            ]
+        ]
+    },
+    {
+        "id": "5ec7178150ae1b0f",
+        "type": "property out",
+        "z": "ae83a8e53bff7847",
+        "connection": "dc42d42587cc29ad",
+        "thing": "4922c372-0b43-40b1-8cf8-af98acc607f0",
+        "property": "d157983d-1490-44a3-a3c3-6eaf4beeca3e",
+        "name": "mode",
+        "propname": "mode",
+        "defaultname": true,
+        "x": 1070,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "edc71c0bddbd7ee7",
+        "type": "evohome-status",
+        "z": "ae83a8e53bff7847",
+        "confignode": "62778331731090d5",
+        "name": "",
+        "interval": "0",
+        "x": 340,
+        "y": 180,
+        "wires": [
+            [
+                "dabe5ea5b7fdc1bb",
+                "efe03748d5043bc2"
+            ]
+        ]
+    },
+    {
+        "id": "d66308de5c08fb5f",
+        "type": "evohome-quickaction",
+        "z": "ae83a8e53bff7847",
+        "confignode": "62778331731090d5",
+        "name": "EvoHome QuickAction",
+        "x": 820,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "3c5bde87ad16d3db",
+        "type": "inject",
+        "z": "ae83a8e53bff7847",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "60",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "5",
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 150,
+        "y": 540,
+        "wires": [
+            [
+                "fe2c5fb1f180f978"
+            ]
+        ]
+    },
+    {
+        "id": "ec47a5fae0ab5a93",
+        "type": "inject",
+        "z": "ae83a8e53bff7847",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "60",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "5",
+        "topic": "",
+        "payload": "false",
+        "payloadType": "bool",
+        "x": 150,
+        "y": 620,
+        "wires": [
+            [
+                "fe2c5fb1f180f978"
+            ]
+        ]
+    }
+]
