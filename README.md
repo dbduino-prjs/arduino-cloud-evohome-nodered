@@ -56,23 +56,46 @@ Full Honeywell documentation [here](https://developer.honeywellhome.com/api-meth
 ### Create the Device 
 Go to the [Devices](https://create.arduino.cc/iot/devices) section of the Arduino IoT Cloud and click on ADD. 
 Select "Any Device" and follow the instructions on the wizard.
-Note: Save your `Device ID` and `Secret Key` as we will use them later and they will not be accessible after finishing the wizard.
+Note: Save your `Device ID` and `Secret Key`. We are not going to use them, but it can be helpful for other use cases.
 
 ### Create the Thing 
 In the Devices list, find the device you just created and click on "CREATE THING". Give it a name and. 
 
 ### Create the Variables 
-Add the variables clicking on the ADD button. 
-At the end of the process, your list of variables should look like this 
+**Important Note**: Every EvoHome setup is different. You may have several temperature sensors, set points, actions, etc. So, you will have to adjust the following instructions to your own setup.
+In my case, I have two zones, each with an electrovalve controlled by a thermostat. The zones have the names: 'salon' and 'arriba'.
 
+Each zone has:
+* The current temperature
+* A set point temperature
+
+For the set point, we will need two variables. The first one will hold the information read from the platform (\<zone\>_target). The second one is the set point that we can define (\<zone\>_set_point).
+
+Add the variables clicking on the ADD button. At the end of the process, your list of variables should look like this 
+
+|Name   |Type   |Description   |
+|---|---|---|
+|arriba_set_point|CloudTemperature|The set point that you can set for zone 'arriba'| 
+|arriba_target|CloudTemperature|The current set point read from EvoHome for zone 'arriba'|
+|arriba_temp|CloudTemperature|The current temperature read from EvoHome for zone 'arriba'|
+|salon_set_point|CloudTemperature| The set point that you can set for zone 'salon'|
+|salon_target|CloudTemperature| The current set point read from EvoHome for zone 'salon'|
+|salon_temp|CloudTemperature| The current temperature read from EvoHome for zone 'salon'|
+|mode|String|Mode read from EvoHome|
+|on_off|CloudSwitch|The action we want to do on the system|
+
+### Create an Arduino Cloud API key
+Go to https://cloud.arduino.cc/home/api-keys.
+Click on "CREATE API KEY", enter a name.
+Note down the Client ID and Client Secret or download the PDF. We will use these credentials in the Node-RED node.
 
 ## Create the Node-RED flow
 Access your Node-RED instance (typically `http://<YOUR_IP>:1880`) and import the code:
 1. Select `Import` in the menu
 2. Paste the code that you can find in [flows.json](https://github.com/dbduino-prjs/arduino-cloud-evohome-nodered/blob/develop/flows.json) in the github project
 3. Click on `Import`
-4. Configure EvoHome node
-5. Configure Arduino Cloud node
+4. Configure EvoHome node using the Honeywell API key that you created earlier
+5. Configure Arduino Cloud node using the Arduino Cloud API Key that you created in the previous section  
 6. Click on Deploy
 
 ## Create the Arduino Cloud dashboard
