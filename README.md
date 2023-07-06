@@ -21,7 +21,7 @@ The platform's IoT Cloud tool allows for easy management and monitoring of conne
 [Node-RED](https://nodered.org/) is an open-source visual programming tool designed for connecting and automating devices, services, and APIs. It provides a browser-based flow editor that allows users to create flows by dragging and dropping nodes onto a canvas and connecting them together. Each node represents a specific functionality or service, such as data input/output, data transformation, or communication with external systems. With its intuitive interface and extensive library of pre-built nodes, Node-RED enables users to quickly and easily create complex workflows without the need for traditional coding. It is particularly popular in the Internet of Things (IoT) domain, where it simplifies the integration of various sensors, devices, and cloud services, allowing users to build powerful IoT applications and automation systems.
 
 ## What is Honeywell Evohome?
-[Honeywell Evohome](https://homecomfort.resideo.com/sites/espana/es-es/Soluciones/Hogar_Inteligente/Pages/evohome.aspx) is a smart home heating system that offers individual room control for optimal comfort and energy efficiency. It consists of a central control unit, wireless radiator controllers, and a mobile app for remote control. Evohome allows users to create customized heating schedules for each room or zone in their home, enabling precise temperature control and eliminating energy waste. The system utilizes wireless communication to communicate with the radiator controllers, providing flexibility in installation and control. With features like geofencing and adaptive learning, Evohome intelligently adjusts heating settings based on occupancy and user preferences, ultimately providing a convenient and cost-effective heating solution for homeowners.
+[Honeywell Evohome](https://www.resideo.com/gb/en/solutions/home-comfort/evohome/) is a smart home heating system that offers individual room control for optimal comfort and energy efficiency. It consists of a central control unit, wireless radiator controllers, and a mobile app for remote control. Evohome allows users to create customized heating schedules for each room or zone in their home, enabling precise temperature control and eliminating energy waste. The system utilizes wireless communication to communicate with the radiator controllers, providing flexibility in installation and control. With features like geofencing and adaptive learning, Evohome intelligently adjusts heating settings based on occupancy and user preferences, ultimately providing a convenient and cost-effective heating solution for homeowners.
 
 # Pre-requisites
 You need:
@@ -47,7 +47,7 @@ The process is very straightforward. You just have to create a Honeywellhome dev
 4. Click on "CREATE NEW APP"
 5. Introduce a name ("App Name")
 6. Introduce a callback URL
-Note: You can use `http://localhost` if you don't have any
+*Note: You can use `http://localhost` if you don't have any*
 7. Get your key and secret. We will use it later on.
 
 Full Honeywell documentation [here](https://developer.honeywellhome.com/api-methods)
@@ -56,10 +56,10 @@ Full Honeywell documentation [here](https://developer.honeywellhome.com/api-meth
 ### Create the Device 
 Go to the [Devices](https://create.arduino.cc/iot/devices) section of the Arduino IoT Cloud and click on ADD. 
 Select "Any Device" and follow the instructions on the wizard.
-Note: Save your `Device ID` and `Secret Key`. We are not going to use them (as we will use the API key), but it can be helpful for other use cases.
+*Note: Save your `Device ID` and `Secret Key`. We are not going to use them (as we will use the API key), but it can be helpful for other use cases.*
 
 ### Create the Thing 
-In the Devices list, find the device you just created and click on "CREATE THING". Give it a name and. 
+In the Devices list, find the device you just created and click on "CREATE THING" and assign a name to it.
 
 ### Create the Variables 
 **Important Note**: Every EvoHome setup is different. You may have several temperature sensors, set points, actions, etc. So, you will have to adjust the following instructions to your own setup.
