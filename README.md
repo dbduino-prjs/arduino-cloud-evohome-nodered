@@ -101,8 +101,10 @@ Access your Node-RED instance (typically `http://<YOUR_IP>:1880`) and import the
 3. Configure the Arduino Cloud nodes
    a. Configure your connection with the Arduino Cloud API key that you created in the previous section  
    b. Introduce your Thing and property
+
 ![Node properties](assets/Node-RED-Arduino_Cloud-property-node.png)
-1. Click on Deploy (top right corner of the screen)
+
+4. Click on Deploy (top right corner of the screen)
 
 ## Create the Arduino Cloud dashboard
 Go to the Dashboards section and click on CREATE. 
