@@ -85,7 +85,7 @@ Add the variables clicking on the ADD button. At the end of the process, your li
 |on_off|CloudSwitch|The action we want to do on the system|
 
 This is a screenshot for reference.
-![Arduino Cloud variables](EvoHome-Arduino_Cloud-variables.png)
+![Arduino Cloud variables](assets/EvoHome-Arduino_Cloud-variables.png)
 
 ### Get an Arduino Cloud API key
 Go to https://cloud.arduino.cc/home/api-keys.
@@ -101,14 +101,14 @@ Access your Node-RED instance (typically `http://<YOUR_IP>:1880`) and import the
 3. Configure the Arduino Cloud nodes
    a. Configure your connection with the Arduino Cloud API key that you created in the previous section  
    b. Introduce your Thing and property
-![Arduino Cloud variables](assets/Node-RED-Arduino_Cloud-property-node.png)
+![Node properties](assets/Node-RED-Arduino_Cloud-property-node.png)
 1. Click on Deploy (top right corner of the screen)
 
 ## Create the Arduino Cloud dashboard
 Go to the Dashboards section and click on CREATE. 
 You can create the widget as you wish. Here you have a screenshot of mine as a reference:
 
-![Arduino Cloud variables](assets/EvoHome-Arduino_Cloud-dashboard.png)
+![Arduino Cloud dashboard](assets/EvoHome-Arduino_Cloud-dashboard.png)
 
 ## Let's test the system
 And that's it.
