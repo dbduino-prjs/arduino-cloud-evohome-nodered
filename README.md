@@ -1,6 +1,8 @@
 arduino-cloud-evohome-nodered
 =============================
 
+This project shows how to control and monitor Honeywell EvoHome heating systems using Arduino Cloud and Node-RED.
+
 # Introduction
 We're surrounded by systems in our homes that help us control and manage our environment. From controlling the heating system and monitoring the temperature to managing the lights and more, these systems make our lives easier. 
 
@@ -10,7 +12,7 @@ But additionally, sometimes, we want to combine data from different applications
 
 Arduino Cloud is an excellent solution for that, but integrating external platforms can be a bit tricky, especially with many commercial products lacking direct integration. That's where Node-RED comes to the rescue! It helps us redirect and manage the traffic between these commercial products and Arduino Cloud. 
 
-This project is part of a series that I've created to showcase how I manage my home systems by integrating them with Arduino Cloud. In addition to this project, I've also worked on integrating TP Link switches and Tuya Energy meter, so you can check those out too! 
+This project is part of a series that I've created to showcase how I manage my home systems by integrating them with Arduino Cloud. In addition to this project, I've also worked on integrating [TP Link smart plugs](https://github.com/dbduino-prjs/arduino-cloud-tplink-switch-nodered) and [Tuya Energy meter](https://github.com/dbduino-prjs/arduino-cloud-tuya-energy-nodered), so you can check those out too! 
 
 ## What is Arduino Cloud?
 [Arduino Cloud](https://cloud.arduino.cc) is a platform that simplifies the process of developing, deploying, and managing IoT devices. It supports various hardware, including Arduino boards, ESP32, and ESP8266 based boards, and makes it easy for makers, IoT enthusiasts, and professionals to build connected projects without coding expertise. 
