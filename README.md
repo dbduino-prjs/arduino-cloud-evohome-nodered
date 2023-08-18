@@ -46,25 +46,26 @@ The process is very straightforward. You just have to create a Honeywellhome dev
 1. https://developer.honeywellhome.com
 2. Sign up (if you don't have an account yet)
 3. Log in and go to the tab "MY APPS"
-4. Click on "CREATE NEW APP"
+4. Click on **CREATE NEW APP**
 5. Introduce a name ("App Name")
 6. Introduce a callback URL
-*Note: You can use `http://localhost` if you don't have any*
+> Note: You can use `http://localhost` if you don't have any*
 7. Get your key and secret. We will use it later on.
 
 Full Honeywell documentation [here](https://developer.honeywellhome.com/api-methods)
 
 ## Create the Device in the Arduino Cloud
 ### Create the Device 
-Go to the [Devices](https://create.arduino.cc/iot/devices) section of the Arduino IoT Cloud and click on ADD. 
+Go to the [Devices](https://create.arduino.cc/iot/devices) section of the Arduino IoT Cloud and click on **ADD**. 
 Select "Any Device" and follow the instructions on the wizard.
-*Note: Save your `Device ID` and `Secret Key`. We are not going to use them (as we will use the API key), but it can be helpful for other use cases.*
+
+> Note: Save your `Device ID` and `Secret Key`. We are not going to use them (as we will use the API key), but it can be helpful for other use cases.
 
 ### Create the Thing 
-In the Devices list, find the device you just created and click on "CREATE THING" and assign a name to it.
+In the Devices list, find the device you just created and click on **CREATE THING** and assign a name to it.
 
 ### Create the Variables 
-**Important Note**: Every EvoHome setup is different. You may have several temperature sensors, set points, actions, etc. So, you will have to adjust the following instructions to your own setup.
+> **Important Note**: Every EvoHome setup is different. You may have several temperature sensors, set points, actions, etc. So, you will have to adjust the following instructions to your own setup.
 In my case, I have two zones, each with an electrovalve controlled by a thermostat. The zones have the names: 'salon' and 'arriba'.
 
 Each zone has:
@@ -90,19 +91,20 @@ This is a screenshot for reference.
 ![Arduino Cloud variables](assets/EvoHome-Arduino_Cloud-variables.png)
 
 ### Get an Arduino Cloud API key
-Go to https://cloud.arduino.cc/home/api-keys.
-Click on "CREATE API KEY", enter a name.
+- Go to https://cloud.arduino.cc/home/api-keys.
+- Click on **CREATE API KEY**, enter a name.
+
 Note down the Client ID and Client Secret or download the PDF. We will use these credentials in the Node-RED node.
 
 ## Create the Node-RED flow
 Access your Node-RED instance (typically `http://<YOUR_IP>:1880`) and import the code:
 1. Select `Import` in the menu
-   a. Paste the code that you can find in [flows.json](https://github.com/dbduino-prjs/arduino-cloud-evohome-nodered/blob/develop/flows.json) in the github project
-   b. Click on `Import`
+   - Paste the code that you can find in [flows.json](https://github.com/dbduino-prjs/arduino-cloud-evohome-nodered/blob/develop/flows.json) in the github project
+   - Click on `Import`
 2. Configure the EvoHome nodes using the Honeywell API key that you created earlier
 3. Configure the Arduino Cloud nodes
-   a. Configure your connection with the Arduino Cloud API key that you created in the previous section  
-   b. Introduce your Thing and property
+   - Configure your connection with the Arduino Cloud API key that you created in the previous section  
+   - Introduce your Thing and property
 
 ![Node properties](assets/Node-RED-Arduino_Cloud-property-node.png)
 
