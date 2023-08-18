@@ -57,6 +57,7 @@ Full Honeywell documentation [here](https://developer.honeywellhome.com/api-meth
 ## Create the Device in the Arduino Cloud
 ### Create the Device 
 Go to the [Devices](https://create.arduino.cc/iot/devices) section of the Arduino IoT Cloud and click on **ADD**. 
+
 Select "Any Device" and follow the instructions on the wizard.
 
 > Note: Save your `Device ID` and `Secret Key`. We are not going to use them (as we will use the API key), but it can be helpful for other use cases.
@@ -88,6 +89,7 @@ Add the variables clicking on the ADD button. At the end of the process, your li
 |on_off|CloudSwitch|The action we want to do on the system|
 
 This is a screenshot for reference.
+
 ![Arduino Cloud variables](assets/EvoHome-Arduino_Cloud-variables.png)
 
 ### Get an Arduino Cloud API key
@@ -108,21 +110,24 @@ Access your Node-RED instance (typically `http://<YOUR_IP>:1880`) and import the
 
 ![Node properties](assets/Node-RED-Arduino_Cloud-property-node.png)
 
-4. Click on Deploy (top right corner of the screen)
+4. Click on **Deploy** (top right corner of the screen)
 
 ## Create the Arduino Cloud dashboard
-Go to the Dashboards section and click on CREATE. 
+Go to the Dashboards section and click on **CREATE**. 
+
 You can create the widget as you wish. Here you have a screenshot of mine as a reference:
 
 ![Arduino Cloud dashboard](assets/EvoHome-Arduino_Cloud-dashboard.png)
 
 ## Let's test the system
-And that's it.
+And that's it!
+
 Now it is time to go to your Arduino Cloud dashboard and see the evolution of the temperature and perform the desired actions.
 
 
 ## Final considerations
 ### Troubleshooting
 Check the logs to see if the nodes are working.
+
 ![](assets/Node-RED-EvoHome-debug.png)
 
